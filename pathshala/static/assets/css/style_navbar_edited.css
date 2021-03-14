@@ -1,0 +1,436 @@
+
+
+ /*  home {
+   .background: #84c8f0;
+    background:#273c48;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home > svg {
+    display: block;
+    transform-origin: bottom;
+    animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+  @keyframes animateWave {
+    0% {
+      transform: scale(1,0);
+    }
+    100% {
+      transform: scale(1,1);
+    }
+  }
+.navbar, .navbar-nav{
+    margin: 0px 30px 0px 0px;
+    background-color: #FFF;
+}
+.nav-item{
+    margin: 10px;
+}
+.brandLogo{
+    margin-left: 5% !important;
+    height: 70px;
+}
+nav {
+    height: 114px;
+    width: 100% !important;
+}
+.nav-link{
+    width: fit-content;
+    font-weight: 500;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dropdown-item{
+    font-weight: 500;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.login{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+}
+.login :hover{
+    color: #FFF;
+    text-decoration: none !important;
+}
+.login span{
+    color: rgba(245,62,106,1);
+    align-items: center;
+    background: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    transition: background .5s ease;
+    width: 145px;
+    text-decoration: none !important;
+}
+.login:hover span {
+    background: transparent;
+    text-decoration: none !important;
+}
+.signup{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    color: #e1e1e1;
+}*/
+.signup:hover{
+    color: #ffffff;
+} /*
+.header{
+   background-color: #84c8f0;
+    background-color:#821C66;
+    min-height: 86vh;
+    padding-left: 5%;
+}*/
+.tagline{
+    padding-top: 5%;
+    width: fit-content;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 70%);
+    -webkit-background-clip: text;
+    /* background:#FFF;*/
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.tagline h1, .tagline h4{
+    font-weight: 1000 !important;
+    line-height: 1.25em;
+    font-style: poppins serif;
+}
+.tagline h1{
+    font-size: 3.25em;
+}
+.tagline h4{
+    font-size: 2.5em;
+}
+.secondtagline{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.secondtagline h5{
+    color: #FFF;
+    font-weight: 800 !important;
+    font-size: 2.25em !important;
+    width: fit-content;
+}
+.btn-phone{
+    display:flex ;
+    justify-content: center;
+    padding-top: 40px;
+}
+.headerButtons{
+    margin-top: 3%;
+    margin-left: 10%;
+}
+.headerButtons .btn{
+    border-radius: 25px;
+    width: 200px;
+}
+.header .btn, .header .btn :hover, .header.btn:active {
+    background-color: #FFF;
+    color: #157BD8 !important;
+    border: 3px solid #157BD8;
+}
+#width-set-1{
+    widows: 100px; ;
+}
+#achievements{
+
+    position: relative;
+    text-align: center;
+    margin-top: 40px;
+    margin: 0 auto;
+    min-height: 300px;
+    max-width: 100%;
+    background: linear-gradient(213.98deg, rgba(21, 158, 216, 0.42) 2.05%, #F53E6A 95.8%);
+     
+}
+#achieveinner{
+    padding-top: 5%;
+    padding-bottom: 0;
+    left: 0;
+    right: 0; 
+    margin:auto;
+    /*
+    background: linear-gradient(213.98deg, rgba(21, 158, 216, 0.42) 2.05%, #F53E6A 95.8%);
+   */
+}
+
+#achievehead{
+
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 182.7%;
+    color: white;
+ 
+}
+#achievepara{
+
+    color: white;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+
+}
+@media only screen and (max-width: 600px) {
+    .tagline h1,h2,h3,.tagline h4,h5,h6{
+        font-weight: 750 !important;
+    }
+    .secondtagline{
+        margin-left: 0%;
+    }
+    .headerButtons{
+        margin-left: 0%;
+    }
+    .secondtagline h5{
+        font-weight: 750 !important;
+        font-size: 2em !important;
+        width: fit-content;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .introline{
+        font-size: .75em;
+    }
+    .objectives img{
+        width: 80%;
+    }
+    .Intro p{
+        padding-top: 40px;
+        font-size: 1.25em !important;
+        font-weight: 900 !important;
+    }
+    .features{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .features .card{
+        width: 350px !important;
+        height: 350px !important;
+    }
+    .features .card img{
+        width: 347px !important;
+    }
+    .objectives .card{
+        width: 350px !important;
+    }
+    .objectives .card img{
+        width: 350px !important;
+    }
+}
+.Intro{
+    min-height: fit-content;
+    background-color: #3cc1fa;
+    padding-bottom: 3%;
+}
+.introline{
+    padding: 5%;
+}
+.introline h4{
+    font-size: 3em;
+    font-weight: 800;
+    color: #FFF;
+}
+.introImage{
+    margin-left: -544px;
+    margin-top: -20px;
+}
+.Intro p{
+    width: 90%;
+    color: #FFF;
+    font-size: 1.75em;
+    font-weight: 900;
+    line-height: 1.5em;
+}
+.Intro button{
+    color: #157BD8 !important;
+    width: 200px !important;
+    height: 50px !important;
+    border-radius: 25px; 
+    font-weight: 500;
+}
+.container-edit-1{
+    padding: 0% !important;
+}
+.objectives{
+    background-color: #84c8f0;
+    min-height: fit-content;
+    padding: 3% !important;
+}
+.objectives img{
+    height: 55%;
+}
+.objectives h3{
+    font-weight: 900;
+    font-size: 2.5em;
+    width: fit-content;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.objectives .btn, .objectives .btn :focus, .objectives .btn :active{
+    background: linear-gradient(240deg, rgba(21,144,216,1) 18%, rgba(245,62,106,1) 100%);
+    color: #FFF;
+    height: 50px;
+    border-radius: 25px;
+    border: 0px;
+}
+.objectives button{
+    width: fit-content !important;
+}
+.objectives li{
+    list-style-image: url("../../public/bullet.png");
+    margin: .5%;
+}
+.objectives .card{
+    padding: 0% !important;
+    width: 90% !important;
+    overflow: hidden;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.objectives .card img{
+    width: 101% !important;
+    bottom: 0%;
+}
+.card-header h1{
+    font-weight: 800;
+    color: #157BD8;
+    font-size: 3em;
+    line-height: 1;
+    padding-left: 8%;
+    width: fit-content;
+    /*background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,.9) 60%);
+background: linear-gradient(70deg, white, pink);*/
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card-header small{
+    padding-left: 45%;
+}
+.features{
+    min-height: 500px;
+    max-height: fit-content;
+    width: 100%;
+    padding-bottom: 5%;
+    overflow: hidden;
+    background-color: #3232CC;
+}
+.features .card{
+    background-color: #FFF !important;
+    border: 2px solid #157BD8;
+    width: 90% !important;  
+    height: 90%;
+    max-width: 250px;
+    min-height: 250px;
+    max-height: 250px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.features .card img{
+    position: absolute;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-width: fit-content;
+}
+.btn-outline{
+    background: linear-gradient(180deg, rgba(21,144,216,1) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-phone{
+    padding-top:40px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 30px;
+}
+.btn-outline h6{
+    font-weight: 600;
+}
+.btn h6{
+    color: #FFF;
+    font-weight: 600;
+}
+.footer{
+    background-color: #3232CC;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+}
+.footer h5{
+    color: #FFF;
+    font-weight: 600;
+    margin: 5% 0%;
+    padding: 0 !important;
+}
+.footer a{
+    color: #FFF;
+}
+.footer-upper{
+    padding: 30px 50px;
+}
+.footer-bottom{
+    height: fit-content;
+    padding: 12.5px 10%;
+    background-color: #111;
+}
+.footer img{
+    height: 100px;
+}
+.footer-upper p{
+    color: #ffffff;
+    font-size: medium;
+}
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.fa-2x{
+    color: #111 !important;
+}

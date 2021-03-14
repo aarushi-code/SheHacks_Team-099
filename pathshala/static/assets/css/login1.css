@@ -1,0 +1,230 @@
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(30deg,#40012e, #fff);
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navbar, .navbar-nav{
+    margin: 0px 30px 0px 0px;
+    background-color: #FFF;
+    z-index: +9999;
+}
+.nav-item{
+    margin: 10px;
+}
+.brandLogo{
+    margin-left: 5% !important;
+    height: 70px;
+}
+nav {
+    height: 114px;
+    width: 100% !important;
+}
+.nav-link{
+    width: fit-content;
+    font-weight: 500;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media (min-width: 1280px){
+    .navbar-expand-custom {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .navbar-expand-custom .navbar-collapse {
+        display: flex!important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+}
+.login{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(130, 28, 102) 18%, rgba(245,62,106,1) 100%);
+}
+.login :hover{
+    color: #FFF;
+    text-decoration: none !important;
+}
+.login span{
+    color: rgba(245,62,106,1);
+    align-items: center;
+    background: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    transition: background .5s ease;
+    width: 145px;
+    text-decoration: none !important;
+}
+.login:hover span {
+    background: transparent;
+    text-decoration: none !important;
+}
+.signup{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    color: #e1e1e1;
+}
+.signup:hover{
+    color: #ffffff;
+}
+.footer{
+    background-color: #F5083E;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+}
+.footer h5{
+    color: #FFF;
+    font-weight: 600;
+    margin: 5% 0%;
+    padding: 0 !important;
+}
+.footer a{
+    color: #FFF;
+}
+.footer-upper{
+    padding: 30px 50px;
+}
+.footer-bottom{
+    height: fit-content;
+    padding: 12.5px 10%;
+    background-color: #111;
+}
+.footer img{
+    height: 100px;
+}
+.footer-upper p{
+    color: #ffffff;
+    font-size: medium;
+}
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.fa-2x{
+    color: #111 !important;
+}
+.container-fluid .col-md-6{
+    height: 80vh;
+}
+.downBtn{
+    width: 15vw;
+}
+@media (max-width: 768px){
+    .downBtn{
+        width: 35vw;
+    }
+    .container-fluid .col-md-6{
+        height: fit-content;
+    }
+    .form-group{
+        width: 80vw !important;
+    }
+    .form-control{
+        width: 100% !important;
+    }
+}
+.loginForm{
+    display: block;
+}
+.signupForm{
+    display: none;
+}
+.form-group{
+    width: 30vw;
+    margin: 1.5% !important;
+}
+.form-control{
+    width: 80%;
+    border-radius: 25px;
+    height: 50px;
+}
+.contactbtn{
+    min-width: 40%;
+    width: fit-content;
+    border: 0;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(245,62,106,1);
+}
+.btn-block, .btn-block:focus, .btn-block:active, .btn-block:visited{
+    width: 60% !important;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    border: 0;
+    height: 40px;
+    border-radius: 20px;
+}
+.toggler{
+    width: fit-content;
+    height: fit-content;
+    margin: 5% auto;
+    position: relative;
+    background-color: ;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 5px 0px;
+}
+.toggle-btn, .toggle-btn :active, .toggle-btn:focus{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+.active-btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 2%;
+    width: 110px;
+    height: 100%;
+    background: #6e0867;
+    border-radius: 30px;
+    transition: .5s ease;
+}

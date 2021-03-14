@@ -1,0 +1,193 @@
+.row-content{
+    margin:20px;
+}
+.card{
+    background: rgb(22, 22, 95);
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.5);
+    /* transition: 0.9s; */
+    text-align: center;
+    color: white;
+}
+#price{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #da4357;
+    margin: 5% auto 0 auto;
+    
+}
+
+#deals{
+    margin-top: 10%;
+}
+.card-title{
+    font-size: 18px;
+    color: white;
+    line-height: 3;
+    text-transform: uppercase;
+}
+#price h2{
+    font-size: 38px;
+    color: white;
+}
+#deals h5{
+    line-height: 1;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+}
+.card:hover{
+    background: rgb(21, 21, 134);
+    color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,1);
+    transform: scale(1.1);
+    z-index: 1;
+    border-radius: 25px;
+}
+.card:hover #price{
+    border-color: white;
+}
+.card a{
+    background: linear-gradient(229.9deg, rgba(21, 158, 216, 0.42) 2.05%, #F53E6A 95.8%);
+    box-shadow: 0px 12px 35px rgba(160, 121, 0, 0.2);
+    border-radius: 150px;
+    color: white;
+    padding: 10px 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 10% auto;
+    display: inline-block;
+}
+.card:hover a{
+    background: linear-gradient(90deg, rgba(21, 158, 216, 0.42) 2.05%, #F53E6A 95.8%);
+    color: white;
+}
+#price h2{
+    margin:25px;
+
+}
+.navbar, .navbar-nav{
+    margin: 0px 30px 0px 0px;
+    background-color: #FFF;
+}
+.nav-item{
+    margin: 10px;
+}
+.brandLogo{
+    margin-left: 5% !important;
+    height: 70px;
+}
+nav {
+    height: 114px;
+    width: 100% !important;
+}
+.nav-link{
+    width: fit-content;
+    font-weight: 500;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dropdown-item{
+    font-weight: 500;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.login{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+}
+.login :hover{
+    color: #FFF;
+    text-decoration: none !important;
+}
+.login span{
+    color: rgba(245,62,106,1);
+    align-items: center;
+    background: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    transition: background .5s ease;
+    width: 145px;
+    text-decoration: none !important;
+}
+.login:hover span {
+    background: transparent;
+    text-decoration: none !important;
+}
+.signup{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    color: #e1e1e1;
+}
+.signup:hover{
+    color: #ffffff;
+}
+.footer{
+    background-color: #F5083E;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+}
+.footer h5{
+    color: #FFF;
+    font-weight: 600;
+    margin: 5% 0%;
+    padding: 0 !important;
+}
+.footer a{
+    color: #FFF;
+}
+.footer-upper{
+    padding: 30px 50px;
+}
+.footer-bottom{
+    height: fit-content;
+    padding: 12.5px 10%;
+    background-color: #111;
+}
+.footer img{
+    height: 100px;
+}
+.footer-upper p{
+    color: #ffffff;
+    font-size: medium;
+}
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.fa-2x{
+    color: #111 !important;
+}

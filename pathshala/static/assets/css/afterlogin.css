@@ -1,0 +1,210 @@
+.navbar, .navbar-nav{
+    margin: 0px 30px 0px 0px;
+    background-color: #FFF;
+    z-index: +9999 !important;
+}
+.nav-item{
+    margin: 10px;
+}
+.brandLogo{
+    margin-left: 5% !important;
+    height: 70px;
+}
+nav {
+    height: 114px;
+    width: 100% !important;
+}
+.nav-link{
+    width: fit-content;
+    font-weight: 500;
+    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media (min-width: 1280px){
+    .navbar-expand-custom {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .navbar-expand-custom .navbar-collapse {
+        display: flex!important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+}
+.login{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+}
+.login :hover{
+    color: #FFF;
+    text-decoration: none !important;
+}
+.login span{
+    color: rgba(245,62,106,1);
+    align-items: center;
+    background: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    transition: background .5s ease;
+    width: 145px;
+    text-decoration: none !important;
+}
+.login:hover span {
+    background: transparent;
+    text-decoration: none !important;
+}
+.signup{
+    width: 150px !important;
+    height: 50px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    border: 0px;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+    color: #e1e1e1;
+}
+.signup:hover{
+    color: #ffffff;
+}.footer{
+    background-color: #4fa9dd;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+}
+.footer h5{
+    color: #FFF;
+    font-weight: 600;
+    margin: 5% 0%;
+    padding: 0 !important;
+}
+.footer a{
+    color: #FFF;
+}
+.footer-upper{
+    padding: 30px 50px;
+}
+.footer-bottom{
+    height: fit-content;
+    padding: 12.5px 10%;
+    background-color: #111;
+}
+.footer img{
+    height: 100px;
+}
+.footer-upper p{
+    color: #ffffff;
+    font-size: medium;
+}
+.fa-2x{
+    color: #111 !important;
+}
+@media (max-width: 585px){
+    #achievements{
+        margin-bottom: 527px !important;
+    }
+    .class .card{
+        height: 120px !important;
+        width: 120px !important;
+    }
+}
+.main-container{
+    height: 85vh;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.class .card{
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+    border: 0;
+    color: #ffffff;
+    font-size: 5vh;
+    border-radius: 15px;
+}
+.course .card{
+    width: 280px;
+    height: 100px;
+    margin: 15px;
+    border: 0;
+    background: linear-gradient(240deg, rgba(255,255,255,1) 0%, rgba(235,111,10,.1) 100%);
+}
+.card :focus, .card:active, .card:hover{
+    border: 2px solid #222;
+}
+.payment .card:hover{
+    border: none;
+}
+.board .card{
+    height: 100px;
+    width: 280px;
+    padding: 5px;
+    margin: 20px;
+}
+.board-img{
+    height: 90px;
+    width: auto;
+}
+.course-img{
+    height: 70px;
+}
+.payment-img{
+    height: 40vh;
+}
+a:hover{
+    text-decoration: none;
+}
+.payment-btn{
+    width: 150px;
+    height: 60px;
+    padding: 15px 10px;
+    border-radius: 30px;
+    border: 0;
+    outline: none !important;
+    color: #FFF;
+    font-size: 1.35rem;
+    font-weight: 500;
+    background: linear-gradient(240deg, rgb(7, 110, 170) 0%, rgba(245,62,106,1) 80%);
+}
+.payment .card{
+    padding: 5px;
+}
