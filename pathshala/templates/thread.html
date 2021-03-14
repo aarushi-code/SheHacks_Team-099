@@ -1,0 +1,118 @@
+{% block head %}
+<title>Chat</title>
+<script src="{% static '/channels/js/websocketbridge.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+
+    {% block content %}
+<script>
+  $(#notification-element).on("click", function(){
+      data = {"type":"notification_read", "username": username, "notification_id": notification_id};
+      socket.send(JSON.stringify(data));
+  });
+</script>
+
+<!-- back to inbox button with notification example -->
+        <a class="btn btn-light" id="notification_id" href="{% url 'chat:inbox' %}">Back to Inbox</a>
+
+    <div class="msg_history">
+          {% for chat in object.chatmessage_set.all %}
+          {% if chat.user == user %}
+          <div class="outgoing_msg">
+            <div class="outgoing_msg_img"> <img src="{{ chat.user.profile.image.url }}"> </div>
+            <div class="sent_msg">
+              <p>{{ chat.message }}</p>
+              <span class="time_date"> {{ chat.timestamp }}</span>
+            </div>
+          </div>
+          {% else %}
+          <div class="incoming_msg">
+            <div class="incoming_msg_img"> <img src="{{ chat.user.profile.image.url }}"> </div>
+            <div class="received_msg">
+              <div class="received_withd_msg">
+                <p>{{ chat.message }}</p>
+                <span class="time_date"> {{ chat.timestamp }}</span>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div class="type_msg">
+          <div class="input_msg_write">
+            <!-- text input / write message form -->
+            <form id='form' method='POST'>
+              {% csrf_token %}
+              <input type='hidden' id='myUsername' value='{{ user.username }}' />
+              {{ form.as_p }}
+              <center><button type="submit" class='btn btn-success disabled' value="Send">Send</button></center>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.js'></script>
+
+<script>
+  // websocket scripts - client side*
+  var loc = window.location
+  var formData = $("#form")
+  var msgInput = $("#id_message")
+  var chatHolder = $('#chat-items')
+  var me = $('#myUsername').val()
+
+  var wsStart = 'ws://'
+  if (loc.protocol == 'https:') {
+    wsStart = 'wss://'
+  }
+  var endpoint = wsStart + loc.host + loc.pathname
+  var socket = new ReconnectingWebSocket(endpoint)
+
+  // below is the message I am receiving
+  socket.onmessage = function(e) {
+    console.log("message", e)
+    var data = JSON.parse(event.data);
+    // Find the notification icon/button/whatever and show a red dot, add the notification_id to element as id or data attribute.
+    var chatDataMsg = JSON.parse(e.data)
+    chatHolder.append('<li>' + chatDataMsg.message + ' from ' + chatDataMsg.username + '</li>')
+  }
+  // below is the message I am sending
+  socket.onopen = function(e) {
+    console.log("open", e)
+    formData.submit(function(event) {
+      event.preventDefault()
+      var msgText = msgInput.val()
+
+      var finalData = {
+        'message': msgText
+      }
+      socket.send(JSON.stringify(finalData))
+      formData[0].reset()
+    })
+  }
+  socket.onerror = function(e) {
+    console.log("error", e)
+  }
+  socket.onclose = function(e) {
+    console.log("close", e)
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const webSocketBridge = new channels.WebSocketBridge();
+    webSocketBridge.connect('/ws');
+    webSocketBridge.listen(function(action, stream) {
+      console.log("RESPONSE:", action);
+    })
+    document.ws = webSocketBridge; /* for debugging */
+  })
+</script>
+
+{% endblock %}

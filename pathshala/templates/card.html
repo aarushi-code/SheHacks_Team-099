@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing</title>
+  <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Pricing</title>
+
+	<link rel="stylesheet" href="{% static 'card/style.css' %}" /><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="container">
+    <div class="top">
+      <h1>Plans & Pricing</h1>
+      <div class="toggle-btn">
+        <span style="margin: 0.8em;">Regular</span>
+        <label class="switch">
+          <input type="checkbox" id="checbox" onclick="check()" ; />
+          <span class="slider round"></span>
+        </label>
+        <span style="margin: 0.8em;">Crash Course</span></div>
+    </div>
+
+    <div class="package-container">
+      <div class="packages">
+        <h1>Basic</h1>
+        <h2 class="text1">Rs. 4500</h2>
+        <h2 class="text2">Rs. 1500</h2>
+        <ul class="list">
+          <li class="first">1 on 5 mentorship</li>
+          <li>Unlimited Notes</li>
+          <li>Daily Tests</li>
+          <li>Unlimited Advanced Questions</li>
+
+          <li>Targetted Exam Preparation</li>
+        </ul>
+        <a href="/cart" class="button button1">Start Now</a>
+      </div>
+      <div class="packages">
+        <h1>Basic</h1>
+        <h2 class="text1">Rs. 6000</h2>
+        <h2 class="text2">Rs. 3000</h2>
+        <ul class="list">
+          <li class="first">1 on 1 mentorship</li>
+          <li>Unlimited Notes</li>
+          <li>Daily Tests</li>
+          <li>Unlimited Advanced Questions</li>
+          <li>Targetted Exam Preparation</li>
+        </ul>
+        <a href="/cart" class="button button2">Start Now</a>
+      </div>
+     
+    </div>
+  </div>
+
+  <script src="{% static 'card/script.js' %}"></script>
+</body>
+<!-- partial -->
+  <script  src="{% static 'card/script.js' %}"></script>
+
+</body>
+</html>

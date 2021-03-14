@@ -1,0 +1,6 @@
+{% autoescape off %}
+{% csrf_token %}
+Hi {{ user.username }},
+<!--Our team will contact you shortly regarding the payment process.-->
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

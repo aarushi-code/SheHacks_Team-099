@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap/bootstrap-about.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/about.css' %}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <title>About Us</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/landing_final"><img class="brandLogo" src="{% static 'assets/images/logo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon p-0"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="z-index: +9999;">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/landing_final">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Free Demo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/features">Features</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Testimonials</a>
+                        <a href="/about" class="dropdown-item">About e-Pathchala</a>
+                        <a href="/contactus" class="dropdown-item">Contact-Us</a>
+                        <a href="#" class="dropdown-item">ConnectEd</a>
+                        <a href="#" class="dropdown-item">Blogs</a>
+                        <a href="#" class="dropdown-item">Latest In ED</a>
+                        <a href="#" class="dropdown-item">Counselling</a>
+                        <a href="/faq_page" class="dropdown-item">Faq's</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Refer and Earn</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a class="signup" href="/login"> <span><h5 class="my-auto">Login</h5></span></a>
+                </li>
+                <br>
+            </ul>
+        </div>
+    </nav>
+
+
+    
+
+    <div class="container" >
+        <div class="row row-content" >
+            <div class="col-12 col-md-6" >
+                <div class="row">
+                    <h1 class="col-12" id="heading">Meet Our Creative Team</h1>
+                </div>
+                <div class="row">
+                    <div class="col-12" id="text">E-pathshala educational services Ltd. is an Indian educational technology (EdTech) and online tutoring webapp developed by Prachi Singh, Aarushi Sharma and K.Kirti. </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 " >
+                <div class="row"  style="padding: 30px;">
+                    <div class="offset-1 col-5" id="imgdiv" >
+                        
+                            <div class="front">                                
+                                    <img src="{% static 'public/images/Prachi_Singh.jpeg' %}"/>
+                            </div>
+                            <div class="back">
+                                <div class="content text-center">
+                                    <div class="main">
+                                        <h3 class="name">Prachi Singh</h3> 
+                                        <p class="profession">Backend Developer</p>
+                                        
+                                        <h5><i class="fa fa-phone fa-fw text-muted"></i> 9415576034 </h5>
+                                        <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>prachisingh201204@gmail.com</h5> 
+                                     </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div class=" offset-1 col-5" id="imgdiv" >
+                        <div class="front">
+                            <img src="{% static 'public/images/Aarushi_Sharma.jpg' %}" alt="">
+                        </div>
+                        <div class="back">
+                            <div class="content text-center">
+                                <div class="main">
+                                    <h3 class="name">Aarushi Sharma</h3> 
+                                    <p class="profession">Frontend Developer</p>
+                                    
+                                    <h5><i class="fa fa-phone fa-fw text-muted"></i> 7288963019 </h5>
+                                    <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>aarushi@gmail.com</h5> 
+                                 </div>
+                            </div>
+                        </div>             
+                    </div>
+                </div>
+                <!--<div class="row" style="padding: 30px;">
+                    <div class=" offset-1 col-5" id="imgdiv">
+                        <div class="front">
+                            <img src="{% static 'public/images/Vivek Hariharan.jpg' %}" alt="">                            
+                        </div>
+                        <div class="back">
+                            <div class="content text-center">
+                                <div class="main">
+                                    <h3 class="name">Kummangalam Kirti</h3> 
+                                    <p class="profession">UI Designer</p>
+                                    
+                                    <h5><i class="fa fa-phone fa-fw text-muted"></i> 9830060437</h5>
+                                    <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>kummangalam@gmail.com</h5> 
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" offset-1 col-5" id="imgdiv">
+                        <div class="front">
+                            <img src="{% static 'public/images/Siddhant Gautam.jpg' %}" alt="">
+                        </div>
+                        <div class="back">
+                            <div class="content text-center">
+                                <div class="main">
+                                    <h3 class="name">Siddhant Gautam</h3> 
+                                    <p class="profession">Chief Marketing Officer</p>
+                                    
+                                    <h5><i class="fa fa-phone fa-fw text-muted"></i> 7015943285</h5>
+                                    <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>gsiddhant947@gmail.com</h5> 
+                                 </div>
+                            </div>
+                        </div>                   
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="row row-content" >
+            <div class="col-12 col-md-6 order-md-last align-self-end">
+                <div class="row">
+                    <h1 class="col-12" id="heading">We're e-Pathshala</h1>
+                    <h1 class="col-12" id="heading">An E-Learning Platform</h1>
+                </div>
+                <div class="row">
+                    <div class="col-12" id="text">
+                        We're at your call. We serve you always.
+                    </div>
+                </div>
+            </div>
+
+                
+            <div class="col-12 col-md-6 order-md-first">
+                <div class="row" style="padding: 30px;">
+                    <div class="offset-1 col-5 " id="imgdiv">
+                        <div class="front">
+                            <img src="{% static 'public/images/Prince Poddar.jpg' %}" alt="">
+                        </div>
+                        <div class="back">
+                            <div class="content text-center">
+                                <div class="main">
+                                    <h3 class="name">Kummangalam Kirti</h3> 
+                                    <p class="profession">UI Designer</p>
+                                    
+                                    <h5><i class="fa fa-phone fa-fw text-muted"></i> 8017640550</h5>
+                                    <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>kummangalam@gmail.com</h5> 
+                                 </div>
+                            </div>
+                        </div>                      
+                    </div>
+                    <div class=" offset-1 col-5"  id="imgdiv">
+                        <div class="front">
+                            <img src="{% static 'public//images/Adnan Abbas.jpg' %}" alt="">
+                        </div>
+                        <div class="back">
+                            <div class="content text-center">
+                                <div class="main">
+                                    <h3 class="name">Adnan Abbas</h3> 
+                                    <p class="profession">Product Manager</p>
+                                    
+                                    <h5><i class="fa fa-phone fa-fw text-muted"></i> 8159949220</h5>
+                                    <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>science60221023@gmail.com </h5> 
+                                 </div>
+                            </div>
+                        </div>                     
+                    </div>
+                </div>
+                <!--<div class="row" style="padding: 30px;">
+                    <div class=" offset-1 col-5 " id="imgdiv">
+                        <div class="front">
+                            <img src="{% static 'public/images/Soumya Tarafder.jpg' %}" alt="">
+                        </div>
+                        <div class="back">
+                            <div class="content text-center">
+                                <div class="main">
+                                    <h3 class="name">Soumya Tarafder</h3> 
+                                    <p class="profession">Product Manager</p>
+                                    
+                                    <h5><i class="fa fa-phone fa-fw text-muted"></i> 6290819367</h5>
+                                    <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>soumyatarafder624@gmail.com</h5> 
+                                 </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class=" offset-1 col-5 " id="imgdiv">
+                        <div class="front">
+                            <img src="{% static 'public/images/Rajendra Choudhary.jpg' %}" alt="">
+                        </div>
+                        <div class="back">
+                            <div class="content text-center">
+                                <div class="main">
+                                    <h3 class="name">Rajendra Choudhary</h3> 
+                                    <p class="profession">App Development Team Lead</p>
+                                    
+                                    <h5><i class="fa fa-phone fa-fw text-muted"></i> 9828797671</h5>
+                                    <h5><span class="fa fa-envelope-o fa-fw text-muted"></span>rajendrachoudhary52935@gmail.com</h5> 
+                                 </div>
+                            </div>
+                        </div>                              
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="row row-content" >
+            <div class="col-12 col-md-6 ">
+                
+                <h4 class="col-12" id="customer" >Customer Insight,</h6>
+                <h1 class="col-12" id="heading">Professional Support</h1>
+                <br><br><br>
+                <div id="iconsdiv">
+                    <img src="{% static 'public/images/Icon 1.png' %}" alt="" id="icons">
+                    <img src="{% static 'public/images/Icon 2.png' %}" alt="" id="icons">
+                    <img src="{% static 'public/images/Icon 3.png' %}" alt="" id="icons">
+                    <img src="{% static 'public/images/Icon 4.png' %}" alt="" id="icons">
+                </div>    
+            
+                
+            </div>
+                    
+            <div class=" col-md-6 align-self-center" style="padding : 0;">
+                <img src="{% static 'assets/images/logo.png' %}" alt="" class="img-fluid" id="pathshalalogo">
+                <div class="align-self-end justify-content-center" id="hellobtn">
+                    <a href="" class="btn" style="color: white;" >Say Hello</a>
+                </div>
+            </div>
+                 
+        </div>
+    </div>
+    <div id="achievements" >
+        <div class="container-fluid" id="achieveinner">
+            <div class="row">
+                <div class="col-12 col-sm-3 order-sm-first">
+                    <img src="{% static 'public/images/Group 210.png' %}" alt="">
+                    <h1 id="achievehead" class="counter">5,679</h1>
+                    <p id="achievepara">Registered Students</p>
+                </div>                
+                <div class="col-12 col-sm-3 ">
+                    <img src="{% static 'public/images/Group 209.png' %}" alt="">
+                    <h1 id="achievehead" class="counter">2,679</h1>
+                    <p id="achievepara">Student has been helped to achieve their dreams</p>
+                </div>
+                <div class="col-12 col-sm-3 ">
+                    <img src="{% static 'public/images/Group 208.png' %}" alt="">
+                    <h1 id="achievehead" class="counter">10,000</h1>
+                    <p id="achievepara">More than 10,000 people visits our site monthly</p>
+                </div>
+                <div class="col-12 col-sm-3 ">
+                    <img src="{% static 'public/images/Group 207.png' %}" alt="">
+                    <h1 id="achievehead" class="counter">10</h1>
+                    <p id="achievepara">Ranked among the top 10 growing online learning startups in West Africa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="footer-upper">
+            <div class="row mb-1">
+                <div class="col-md-6 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
+                            <p class="mx-2">One of India's fastest growing edtech startups, e-Pathshala provides online
+                                tutoring services for classes 1-12.</p>
+                        </div>
+                        <div class="col-12 mx-1">
+                            <a href="https://www.linkedin.com/company/"
+                                class="fab fa-linkedin fa-2x mx-1"></a>
+                            <a href="https://www.facebook.com/" class="fab fa-facebook fa-2x mx-1"></a>
+                            <a href="https://www.instagram.com/" class="fab fa-instagram fa-2x mx-1"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-12">
+                    <h5>Quick Links</h5>
+                    <a href="landing_final/">Home</a><br>
+                    <a href="coursepage/">Courses</a><br>
+                    <a href="about/">About Us</a><br>
+                    <a href="contactus/">Contact Us</a><br>
+                    <a href="login/">Become a Contributer</a><br>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h5>Contact Us</h5>
+                    <a href="#" style="cursor: none;">+91-9674037142</a><br>
+                    <a href="mailto:contact@ed.in">contact@e-Pathshala.in</a><br>
+                    <a href="https://www.bing.com/maps?where=Kolkata%2C%20West%20Bengal%20700060%2C%20IN">Kolkata, West
+                        Bengal, 700060, India</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12 mt-3 d-flex justify-content-center"
+                    style="flex-direction: column;">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="faq_page/">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom my-auto">
+            <div class="row">
+                <div class="col-md-6 col-12 text-white text-center">
+                    All Rights Reserved | e-Pathshala 2021
+                </div>
+                <div class="col-md-6 col-12 text-white my-auto d-flex justify-content-end">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#" class="px-5">Site Credits</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- counter js file -->
+    <script src="{% static 'js-counter/jquery.counterup.min.js'%} "></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script>
+        jQuery(document).ready(function($){
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        })
+    </script>
+    <!-- Core -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    
+</body>
+</html>

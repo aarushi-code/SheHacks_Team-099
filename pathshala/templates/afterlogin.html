@@ -1,0 +1,309 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-about.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/afterlogin.css' %}">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-custom navbar-light">
+        <a class="navbar-brand" href="#"><img class="brandLogo" src="{% static 'assets/images/logo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon p-0"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../account">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Exams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../course">Free Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact">Contact Us</a>
+                </li>
+                <li class="nav-item my-auto">
+                        <a class="signup" href="/logout"><span><h5 class="my-auto">Logout</h5></span></a>
+                </li>
+                <!--li class="nav-item my-auto">
+                    <a class="login" href="login.html"><span>
+                            <h5 class="my-auto">Sign Up</h5>
+                        </span></a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a class="signup" href="login.html"> <span>
+                            <h5 class="my-auto">Login</h5>
+                        </span></a>
+                </li-->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container center"></div>
+
+    <div class="class-container">
+        <h3 class="text-center">Which grade are you currently in?</h3>
+        <div class="flexbox center class">
+            <div class="card center" onclick="getBoard(1)" style="background-color: #117a38;">
+                1st-2nd
+            </div>
+            <div class="card center" onclick="getBoard(3)" style="background-color: #39b90f;">
+                3rd-4th
+            </div>
+            <div class="card center" onclick="getBoard(5)" style="background-color: #adb90f;">
+                5th
+            </div>
+            <div class="card center" onclick="getBoard(6)" style="background-color: #ea960e;">
+                6th
+            </div>
+            <div class="card center" onclick="getBoard(7)" style="background-color: #Ea2c0e;">
+                7th
+            </div>
+            <div class="card center" onclick="getBoard(8)" style="background-color: #117a38;">
+                8th
+            </div>
+            <div class="card center" onclick="getBoard(9)" style="background-color: #39b90f;">
+                9th
+            </div>
+            <div class="card center" onclick="getBoard(10)" style="background-color: #adb90f;">
+                10th
+            </div>
+            <div class="card center" onclick="getBoard(11)" style="background-color: #ea960e;">
+                11th
+            </div>
+            <div class="card center" onclick="getBoard(12)" style="background-color: #Ea2c0e;">
+                12th
+            </div>
+        </div>
+    </div>
+
+    <div class="board-container" style="display: none;">
+        <h3 class="text-center">Which board are you studying in?</h3>
+        <div class="center board">
+            <div class="card" onclick="getCourse('ICSE')">
+                <div class="row">
+                    <div class="col-4 my-auto">
+                        <img class="board-img" src="{% static 'assets/images/ICSE.jpg' %}">
+                    </div>
+                    <div class="col-8 my-auto">
+                        <h4>ICSE</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card" onclick="getCourse('CBSE')">
+                <div class="row">
+                    <div class="col-4 my-auto">
+                        <img class="board-img" src="{% static 'assets/images/cbse.jpeg' %}">
+                    </div>
+                    <div class="col-8 my-auto">
+                        <h4>CBSE</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-container" style="display: none;">
+        <h3 class="text-center">Which type of course would you prefer?</h3>
+        <div class="course center">
+            <div class="card center" onclick="genMentor('Test')">
+                <div class="row">
+                    <div class="col-3 my-auto">
+                        <img class="course-img" src="{% static 'assets/images/rope.png' %}">
+                    </div>
+                    <div class="col-9 my-auto">
+                        <h4 class="my-auto">Test Series</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card center" onclick="genMentor('Regular')">
+                <div class="row">
+                    <div class="col-3 my-auto">
+                        <img class="course-img" src="https://image.flaticon.com/icons/svg/599/599542.svg">
+                    </div>
+                    <div class="col-9 my-auto">
+                        <h4 class="my-auto">Regular Course</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card center" onclick="genMentor('Crash')">
+                <div class="row">
+                    <div class="col-3 my-auto">
+                        <img class="course-img" src="https://image.flaticon.com/icons/svg/599/599543.svg">
+                    </div>
+                    <div class="col-9 my-auto">
+                        <h4 class="my-auto">Crash Course</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mentor-container" style="display: none;">
+        <h3 class="text-center">Which type of mentorship would you choose?</h3>
+        <div class="course center">
+            <div class="card center" onclick="genBill('1v1')">
+                <div class="row">
+                    <div class="col-3 my-auto">
+                        <img class="course-img" src="https://image.flaticon.com/icons/svg/3079/3079397.svg">
+                    </div>
+                    <div class="col-9 my-auto">
+                        <h4 class="my-auto">1v1 Mentorship</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card center" onclick="genBill('1v5')">
+                <div class="row">
+                    <div class="col-3 my-auto">
+                        <img class="course-img" src="https://image.flaticon.com/icons/svg/3003/3003276.svg">
+                    </div>
+                    <div class="col-9 my-auto">
+                        <h4 class="my-auto">Enhanced Classroom Mentorship</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="r1-container payment" style="display: none;">
+        <div class="center">
+            <div class="card center">
+                <img src = "{% static 'public/educ img-8.jpeg' %}" class="payment-img my-3">
+                <h4>Regular Course</h4>
+                <h5>1v1 Mentorship</h5>
+                <a href="/cart"><button class="payment-btn center">Enroll Now</button></a>
+                <br>
+                <a href="/dashboard"><button class= "payment-btn center">Free Trial</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="r5-container payment" style="display: none;">
+        <div class="center">
+            <div class="card center">
+                <img src = "{% static 'public/educ img-2.jpeg' %}" class="payment-img my-3">
+                <h4>Regular Course</h4>
+                <h5>1v5 Mentorship</h5>
+                <a href="/cart"><button class="payment-btn center">Enroll Now</button></a>
+                <br>
+                <a href="/dashboard"><button class= "payment-btn center">Free Trial</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="c1-container payment" style="display: none;">
+        <div class="center">
+            <div class="card center">
+                <img src = "{% static 'public/educ img-7.jpeg' %}">
+                <h4>Crash Course</h4>
+                <h5>1v1 Mentorship</h5>
+                <a href="/cart"><button class="payment-btn center">Enroll Now</button></a>
+                <br>
+                <a href="/dashboard"><button class= "payment-btn center">Free Trial</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="c5-container payment" style="display: none;">
+        <div class="center">
+            <div class="card center">
+                <img src = "{% static 'public/educ img-1.jpeg' %}">
+                <h4>Crash Course</h4>
+                <h5>1v5 Mentorship</h5>
+                <a href="/cart"><button class="payment-btn center">Enroll Now</button></a>
+                <br>
+                <a href="/dashboard"><button class= "payment-btn center">Free Trial</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-upper">
+            <div class="row mb-1">
+                <div class="col-md-6 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
+                            <p class="mx-2">One of India's fastest growing edtech startups, e-Pathshala provides online
+                                tutoring services for classes 8-12.</p>
+                        </div>
+                        <div class="col-12 mx-1">
+                            <a href="#"
+                                class="fab fa-linkedin fa-2x mx-1"></a>
+                            <a href="#" class="fab fa-facebook fa-2x mx-1"></a>
+                            <a href="#" class="fab fa-instagram fa-2x mx-1"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-12">
+                    <h5>Quick Links</h5>
+                    <a href="./landing.html">Home</a><br>
+                    <a href="./coursepage.html">Courses</a><br>
+                    <a href="./about.html">About Us</a><br>
+                    <a href="./contact.html">Contact Us</a><br>
+                    <a href=".login.html">Become a Contributer</a><br>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h5>Contact Us</h5>
+                    <a href="#" style="cursor: none;">+91-9674037142</a><br>
+                    <a href="mailto:contact@ed.in">contact@e-Pathshala.in</a><br>
+                    <a href="https://www.bing.com/maps?where=Kolkata%2C%20West%20Bengal%20700060%2C%20IN">Kolkata, West
+                        Bengal, 700060, India</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12 mt-3 d-flex justify-content-center"
+                    style="flex-direction: column;">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom my-auto">
+            <div class="row">
+                <div class="col-md-6 col-12 text-white text-center">
+                    All Rights Reserved | e-Pathshala 2021
+                </div>
+                <div class="col-md-6 col-12 text-white my-auto d-flex justify-content-end">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#" class="px-5">Site Credits</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Core -->
+    <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'assets/js/afterlogin.js' %}"></script>
+</body>
+
+</html>

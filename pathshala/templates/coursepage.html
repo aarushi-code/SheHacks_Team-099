@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>courses page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link type="text/html" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/coursepage.css' %}">
+</head>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/landing_final"><img class="brandLogo" src="{% static 'assets/images/logo.png' %}"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon p-0"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="z-index: +9999;">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="/landing_final">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Free Demo</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/features">Features</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
+                  <div class="dropdown-menu">
+                      <a href="#" class="dropdown-item">Testimonials</a>
+                      <a href="/about" class="dropdown-item">About e-Pathshala</a>
+                      <a href="/contactus" class="dropdown-item">Contact-Us</a>
+                      <a href="#" class="dropdown-item">ConnectEd</a>
+                      <a href="#" class="dropdown-item">Blogs</a>
+                      <a href="#" class="dropdown-item">Latest In ED</a>
+                      <a href="#" class="dropdown-item">Counselling</a>
+                      <a href="/faq_page" class="dropdown-item">Faq's</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Refer and Earn</a>
+              </li>
+              <li class="nav-item my-auto">
+                  <a class="signup" href="/login"> <span><h5 class="my-auto">Login</h5></span></a>
+              </li>
+              <br>
+          </ul>
+      </div>
+  </nav>
+
+    <!---heading-->
+    <h1 id="main_heading">Courses</h1>
+    <!--sub heading-->
+    <div class="container-1">
+    <ul class="list-inline ">
+        <li class="list-inline-item "><a class="list-edit" href="#">Free Courses</a></li>
+        <li class="list-inline-item "><a class="list-edit" href="#">Premium Courses</a></li>
+        <li class="list-inline-item "><a class="list-edit" href="#">Course History</a></li>
+    </ul></div>
+
+    <!--Cards-->
+    <div class="main">
+        <ul class="cards">
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title"> COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+          <li class="cards_item">
+            <div class="card">
+                <div class="card-badge">Free</div>
+              <div class="card_image inner"><img src="https://picsum.photos/500/300/?image=10"></div>
+              <div class="card_content">
+                <h2 class="card_title">COURSE</h2>
+                <p class="card_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <button class="btn card_btn">View more</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+   
+    <!--browse button-->
+    <div class="browse-button">
+    <button class="signup" href="#"> <span><h5 class="my-auto">Browse</h5></span></button>
+    </div>
+
+     <!--Footer-->
+     <div class="footer">
+      <div class="footer-upper">
+          <div class="row mb-1">
+              <div class="col-md-6 col-12">
+                  <div class="row">
+                      <div class="col-12">
+                          <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
+                          <p class="mx-2">One of India's fastest growing edtech startups, e-Pathshala provides online
+                              tutoring services for classes 8-12.</p>
+                      </div>
+                      <div class="col-12 mx-1">
+                          <a href="#"
+                              class="fab fa-linkedin fa-2x mx-1"></a>
+                          <a href="#" class="fab fa-facebook fa-2x mx-1"></a>
+                          <a href="#" class="fab fa-instagram fa-2x mx-1"></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-2 col-12">
+                  <h5>Quick Links</h5>
+                  <a href="landing_final/">Home</a><br>
+                  <a href="coursepage/">Courses</a><br>
+                  <a href="about/">About Us</a><br>
+                  <a href="contactus/">Contact Us</a><br>
+                  <a href="login/">Become a Contributer</a><br>
+              </div>
+              <div class="col-lg-2 col-md-6 col-12">
+                  <h5>Contact Us</h5>
+                  <a href="#" style="cursor: none;">+91-9674037142</a><br>
+                  <a href="mailto:contact@ed.in">contact@e-Pathshala.in</a><br>
+                  <a href="https://www.bing.com/maps?where=Kolkata%2C%20West%20Bengal%20700060%2C%20IN">Kolkata, West
+                      Bengal, 700060, India</a>
+              </div>
+              <div class="col-lg-2 col-md-6 col-12 mt-3 d-flex justify-content-center"
+                  style="flex-direction: column;">
+                  <a href="#">Terms & Conditions</a>
+                  <a href="faq_page/">FAQ</a>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom my-auto">
+          <div class="row">
+              <div class="col-md-6 col-12 text-white text-center">
+                  All Rights Reserved | e-Pathshala 2021
+              </div>
+              <div class="col-md-6 col-12 text-white my-auto d-flex justify-content-end">
+                  <a href="#">Privacy Policy</a>
+                  <a href="#" class="px-5">Site Credits</a>
+              </div>
+          </div>
+
+      </div>
+  </div>
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap/bootstrap-about.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'assets/css/contactus.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <title>Contact Us</title>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/landing_final"><img class="brandLogo" src="{% static 'assets/images/logo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon p-0"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="z-index: +9999;">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/landing_final">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Free Demo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/features">Features</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Testimonials</a>
+                        <a href="/about" class="dropdown-item">About e-Pathshala</a>
+                        <a href="/contactus" class="dropdown-item">Contact-Us</a>
+                        <a href="#" class="dropdown-item">ConnectEd</a>
+                        <a href="#" class="dropdown-item">Blogs</a>
+                        <a href="#" class="dropdown-item">Latest In ED</a>
+                        <a href="#" class="dropdown-item">Counselling</a>
+                        <a href="/faq_page" class="dropdown-item">Faq's</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Refer and Earn</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a class="signup" href="/login"> <span><h5 class="my-auto">Login</h5></span></a>
+                </li>
+                <br>
+            </ul>
+        </div>
+    </nav>
+
+
+    
+
+
+    <div class="container" style="z-index: -9999;">
+        <div class="row">
+            <div class="col-12">
+                <h1 id="heading">24 Hrs On Deck </h1>
+                  <h1 id="heading">Customer Support</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                    <p id="at">We are at your call. We serve you always.</p>
+                </div>
+            </div>
+        
+    </div>
+        
+    <!--contact container-->
+     <div class="contact-card">
+        <div class="contact-info">
+            <div class="card">
+              <i class="icon fas fa-envelope"></i>
+              <div class="card-content">
+                <h3>Email</h3>
+                <span>Lorem@gmail.com</span>
+              </div>
+            </div>
+          
+            <div class="card">
+              <i class="icon fas fa-phone"></i>
+              <div class="card-content">
+                <h3>Phone Number</h3>
+                <span>+99999999999</span>
+              </div>
+            </div>
+          
+            <div class="card">
+              <i class="icon fas fa-map-marker-alt"></i>
+              <div class="card-content">
+                <h3>Location</h3>
+                <span>New Delhi</span>
+              </div>
+            </div>
+          </div>
+            </div>
+    
+    <div id="formdiv" class="container">
+        <div class="row justify-content-center">
+            <h3 id="letsTalk">Let's Talk !</h3>
+        </div>
+        <div class="row justify-content-center">
+            <p class="getback">We normally do get back in 48 hours. Please leave a message.</p>
+        </div>
+        
+        <form action="">
+            <div class="form-group row">
+                <div class="offset-md-3 col-12 col-md-6">
+                    <input id="inputbox" type="text" name="fullname" id="fullname" class="form-control form-control-lg" placeholder="Full Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-md-3 col-12 col-md-6">
+                    <input id="inputbox" type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Email Registered">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-md-3 col-12 col-md-6">
+                    <input id="inputbox" type="tel" name="telnum" id="telnum" class="form-control form-control-lg" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-md-3 col-12 col-md-6">
+                    <textarea id="textarea" name="message" id="message"  rows="10" class="form-control form-control-lg" placeholder="Your Message"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-md-3 col-12 col-md-6" id="sendmsg" >
+                    <button class="btn btn-lg btn-block" type="submit" style="color: white" >Send Message</button>
+                </div>
+            </div>
+        </form>
+
+        <div style="padding-top: 40px;" class="row justify-content-center">
+            <h3 id="at">Or call at 999999999999</h3>
+        </div>
+        
+    </div>
+    
+<!--Footer-->
+<div class="footer">
+    <div class="footer-upper">
+        <div class="row mb-1">
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
+                        <p class="mx-2">One of India's fastest growing edtech startups, e-Pathshala provides online
+                            tutoring services for classes 8-12.</p>
+                    </div>
+                    <div class="col-12 mx-1">
+                        <a href="#"
+                            class="fab fa-linkedin fa-2x mx-1"></a>
+                        <a href="#" class="fab fa-facebook fa-2x mx-1"></a>
+                        <a href="#" class="fab fa-instagram fa-2x mx-1"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12">
+                <h5>Quick Links</h5>
+                <a href="landing_final/">Home</a><br>
+                <a href="coursepage/">Courses</a><br>
+                <a href="about/">About Us</a><br>
+                <a href="contactus/">Contact Us</a><br>
+                <a href="login/">Become a Contributer</a><br>
+            </div>
+            <div class="col-lg-2 col-md-6 col-12">
+                <h5>Contact Us</h5>
+                <a href="#" style="cursor: none;">+91-9674037142</a><br>
+                <a href="mailto:contact@ed.in">contact@e-Pathshala.in</a><br>
+                <a href="https://www.bing.com/maps?where=Kolkata%2C%20West%20Bengal%20700060%2C%20IN">Kolkata, West
+                    Bengal, 700060, India</a>
+            </div>
+            <div class="col-lg-2 col-md-6 col-12 mt-3 d-flex justify-content-center"
+                style="flex-direction: column;">
+                <a href="#">Terms & Conditions</a>
+                <a href="faq_page/">FAQ</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom my-auto">
+        <div class="row">
+            <div class="col-md-6 col-12 text-white text-center">
+                All Rights Reserved | e-Pathshala 2021
+            </div>
+            <div class="col-md-6 col-12 text-white my-auto d-flex justify-content-end">
+                <a href="#">Privacy Policy</a>
+                <a href="#" class="px-5">Site Credits</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- counter js file -->
+<script src="./js-counter/jquery.counterup.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script>
+    jQuery(document).ready(function($){
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    })
+</script>
+<!-- Core -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+
+</body>
+</html>
