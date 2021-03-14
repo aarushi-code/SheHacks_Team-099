@@ -1,0 +1,276 @@
+{% csrf_token %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link type="text/html" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap/bootstrap-landing.css' %}">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/profile.css' %}">
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <title>Welcome - John Doe!</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-custom navbar-light navbar-shadow">
+        <a class="navbar-brand" href="/"><img class="brandLogo" src="{% static 'assets/images/logo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon p-0"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Exams</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="/course">Free Courses</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact Us</a>
+                </li>
+                
+                <li class="nav-item my-auto">
+                      <a class="signup" href="/logout"> <span>
+                            <h5 class="my-auto">Logout</h5>
+                        </span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <div class="col-3 my-auto"><img class="my-auto" height="100"
+                            src="https://image.flaticon.com/icons/svg/3011/3011270.svg"></div>
+                    <div class="col-9 my-auto">
+                        <h1 class="text-uppercase my-auto"><strong>John</strong> Doe</h1>
+                        <small><strong>Male</strong>, 16</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 my-auto">
+                <a href="#" class="btn btn-primary float-lg-right">Edit Profile</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card mt-3">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div class="row">
+                            <div class="col-12 py-3">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img class="my-auto" height="60"
+                                            src="https://image.flaticon.com/icons/svg/2912/2912778.svg">
+                                    </div>
+                                    <div class="col-10 my-auto">
+                                        <h3 class="text-uppercase my-auto"> Education</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="offset-2 col-4 my-auto">
+                                        <h6 class="query">Class</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="data my-auto">XIIth</h6>
+                                    </div>
+                                    <div class="offset-2 col-4 my-auto">
+                                        <h6 class="query">Board</h6>
+                                    </div>
+                                    <div class="col-6 my-auto">
+                                        <h6 class="data">ICSE</h6>
+                                    </div>
+                                    <div class="offset-2 col-4 my-auto">
+                                        <h6 class="query">School Name</h6>
+                                    </div>
+                                    <div class="col-6 my-auto">
+                                        <h6 class="data">Gesamtschule, Winden</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img class="my-auto" height="60"
+                                            src="https://image.flaticon.com/icons/svg/2302/2302876.svg">
+                                    </div>
+                                    <div class="col-10 my-auto">
+                                        <h3 class="text-uppercase my-auto">Contact Details</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 offset-2 my-auto">
+                                        <h6 class="query">Email</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="my-auto data">sample@example.com</h6>
+                                    </div>
+                                    <div class="col-4 offset-2 my-auto">
+                                        <h6 class="query">Phone Number</h6>
+                                    </div>
+                                    <div class="col-6 my-auto ">
+                                        <h6 class="data">+91-9876543210</h6>
+                                    </div>
+                                    <div class="col-4 offset-2 my-auto">
+                                        <h6 class="query">WhatsApp</h6>
+                                    </div>
+                                    <div class="col-6 my-auto ">
+                                        <h6 class="data">+91-9876543210</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="row">
+                            <div class="col-12 py-3">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img class="my-auto" height="60"
+                                            src="https://image.flaticon.com/icons/svg/2228/2228680.svg">
+                                    </div>
+                                    <div class="col-10 my-auto">
+                                        <h3 class="text-uppercase">TEST SCORES</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 offset-2 my-auto">
+                                        <h6 class="query">Attempted</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="my-auto data">23</h6>
+                                    </div>
+                                    <div class="col-4 offset-2 my-auto">
+                                        <h6 class="query">Passed</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="my-auto data">19</h6>
+                                    </div>
+                                    <div class="col-4 offset-2 my-auto">
+                                        <h6 class="query">Failed</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="my-auto data">4</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-2 my-auto">
+                                        <img class="my-auto" height="60"
+                                            src="https://image.flaticon.com/icons/svg/2799/2799222.svg">
+                                    </div>
+                                    <div class=" col-10 my-auto">
+                                        <h3 class="text-uppercase">Courses Registered</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10 offset-2 my-auto">
+                                        <h6 class="query">NTSE</h6>
+                                        <h6 class="query">Maths Olympiad</h6>
+                                        <h6 class="query">JEE Foundation Course</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-upper">
+            <div class="row mb-1">
+                <div class="col-md-6 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
+                            <p class="mx-2">One of India's fastest growing edtech startups, e-Pathshala provides online
+                                tutoring services for classes 8-12.</p>
+                        </div>
+                        <div class="col-12 mx-1">
+                            <a href="#"
+                                class="fab fa-linkedin fa-2x mx-1"></a>
+                            <a href="#" class="fab fa-facebook fa-2x mx-1"></a>
+                            <a href="#" class="fab fa-instagram fa-2x mx-1"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-12">
+                    <h5>Quick Links</h5>
+                    <a href="/">Home</a><br>
+                    <a href="/course">Courses</a><br>
+                    <a href="/about">About Us</a><br>
+                    <a href="/contact">Contact Us</a><br>
+                    <a href="#">Become a Contributer</a><br>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h5>Contact Us</h5>
+                    <a href="#" style="cursor: none;">+91-9674037142</a><br>
+                    <a href="mailto:contact@ed.in">contact@e-Pathshala.in</a><br>
+                    <a href="https://www.bing.com/maps?where=Kolkata%2C%20West%20Bengal%20700060%2C%20IN">Kolkata, West
+                        Bengal, 700060, India</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12 mt-3 d-flex justify-content-center"
+                    style="flex-direction: column;">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom my-auto">
+            <div class="row">
+                <div class="col-md-6 col-12 text-white text-center">
+                    All Rights Reserved | e-Pathshala 2021
+                </div>
+                <div class="col-md-6 col-12 text-white my-auto d-flex justify-content-end">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#" class="px-5">Site Credits</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

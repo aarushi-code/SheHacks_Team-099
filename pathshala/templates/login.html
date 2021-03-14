@@ -1,0 +1,237 @@
+<!doctype html>
+{% load socialaccount %}
+{% providers_media_js%}
+{% if message %}
+<script>
+    alert('{{message}}');
+</script>
+
+{% endif %}
+<html lang="en">
+{% load static %}
+
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link type="text/html" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap/bootstrap-landing.css' %}">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/login1.css' %}">
+    <title>Welcome - User!</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/landing_final"><img class="brandLogo" src="{% static 'assets/images/logo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon p-0"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="z-index: +9999;">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/landing_final">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Free Demo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/features">Features</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Testimonials</a>
+                        <a href="/about" class="dropdown-item">About e-Pathshala</a>
+                        <a href="/contactus" class="dropdown-item">Contact-Us</a>
+                        <a href="#" class="dropdown-item">ConnectEd</a>
+                        <a href="#" class="dropdown-item">Blogs</a>
+                        <a href="#" class="dropdown-item">Latest In ED</a>
+                        <a href="#" class="dropdown-item">Counselling</a>
+                        <a href="/faq_page" class="dropdown-item">Faq's</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Refer and Earn</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a class="signup" href="/login"> <span><h5 class="my-auto">Login</h5></span></a>
+                </li>
+                <br>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-md-6 center">
+                <img class="logo d-none d-sm-block" src="{% static 'assets/images/logo.png' %}">
+                <div class="toggler">
+                    <div class="toggle-btn-box">
+                        <div class="active-btn" id="active-btn"></div>
+                        <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                        <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+                    </div>
+                </div>
+                <div class="button d-none d-sm-block">
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="#"><img src="{% static 'assets/images/google-play-badge.png' %}" class="downBtn"></a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#"><img src="{% static 'assets/images/apple.png' %}" class="downBtn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!--?next=dashboard/-->
+            <div class="col-md-6 center">
+                <img class="logo d-none d-sm-block" src="{% static 'assets/images/logo.png' %}">
+                <div class="row">
+                    <div class="col-sm-4 col-10 text-white my-auto d-flex justify-content-space ">
+                        <a href="{% provider_login_url 'google' %}"><img class="brandLogo" src="{% static 'assets/images/google.svg' %}"></a>
+                        <a href="{% provider_login_url 'google' %}"><img class="brandLogo" src="{% static 'assets/images/twitter.svg' %}"></a>
+                        <a href="{% provider_login_url 'linkedin_oauth2' %}"><img class="brandLogo" src="{% static 'assets/images/linkedin.png' %}"></a>
+                    </div></div>
+                <form class="loginForm center" id="loginForm"  method="POST" action="/handle_login/" autocomplete="on">
+                    {% csrf_token %}
+                    <h5 class="text-center">Sign in to your account to continue</h5>
+                    <div class="form-group center">
+                        <input type="email" class="form-control" id="loginusername" name="username" placeholder="Email">
+                    </div>
+                    <div class="form-group center">
+                        <input type="password" class="form-control" id="loginpassword" name="password" placeholder="Password">
+                        <small class="d-flex justify-content-end">Don't have an account? <a href="#"> Sign Up</a></small>
+                        <small class="d-flex justify-content-end"> <a href="password-reset/"> Forgot password?</a></small>
+                    </div>
+                    <div class="form-group center">
+                        <button type="submit" class="btn btn-block btn-primary">Log In</button>
+                    </div>
+                </form>
+                
+                <form class="signupForm center" id="signupForm" method="POST" action="/SignUp/" autocomplete="on" >
+                    {% csrf_token %}
+                    <h5 class="text-center">Welcome! Let's get started</h5>
+                    <div class="form-group center">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                    </div>
+                    <div class="form-group center">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group center">
+                        <input type="email" class="form-control" id="username" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group center">
+                        <input type="tel" class="form-control" id="phone" name="mobile" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group center">
+                        <input type="password" class="form-control" id="password" name="password1" placeholder="Password">
+                    </div>
+                    <div class="form-group center">
+                        <input type="password" class="form-control" id="Confpassword" name="password2" placeholder="Confirm Password">
+                        <div class="d-flex">
+                            <small class="justify-content-start"><a href="#">Terms & Conditions</a></small>
+                            <small class="justify-content-end">&nbsp;Already have an account?<a href="#">Login!</a></small>
+                        </div>
+                    </div>
+                    <div class="form-group center">
+                        <button class="btn btn-primary btn-block mt-3" type="submit">Sign Up</button>
+                        <a href="contactus/" class="btn btn-primary contactbtn mt-2">Contact for Help</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="footer-upper">
+            <div class="row mb-1">
+                <div class="col-md-6 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
+                            <p class="mx-2">One of India's fastest growing edtech startups, e-Pathshala provides online
+                                tutoring services for classes 8-12.</p>
+                        </div>
+                        <div class="col-12 mx-1">
+                            <a href="#"
+                                class="fab fa-linkedin fa-2x mx-1"></a>
+                            <a href="#" class="fab fa-facebook fa-2x mx-1"></a>
+                            <a href="#" class="fab fa-instagram fa-2x mx-1"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-12">
+                    <h5>Quick Links</h5>
+                    <a href="landing_final/">Home</a><br>
+                    <a href="coursepage/">Courses</a><br>
+                    <a href="about/">About Us</a><br>
+                    <a href="contactus/">Contact Us</a><br>
+                    <a href="login/">Become a Contributer</a><br>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <h5>Contact Us</h5>
+                    <a href="#" style="cursor: none;">+91-9674037142</a><br>
+                    <a href="mailto:contact@ed.in">contacte-Pathshala.in</a><br>
+                    <a href="https://www.bing.com/maps?where=Kolkata%2C%20West%20Bengal%20700060%2C%20IN">Kolkata, West
+                        Bengal, 700060, India</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12 mt-3 d-flex justify-content-center"
+                    style="flex-direction: column;">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="faq_page/">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom my-auto">
+            <div class="row">
+                <div class="col-md-6 col-12 text-white text-center">
+                    All Rights Reserved | e-Pathshala 2020
+                </div>
+                <div class="col-md-6 col-12 text-white my-auto d-flex justify-content-end">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#" class="px-5">Site Credits</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const signupForm = document.getElementById("signupForm");
+        var active = document.getElementById("active-btn");
+
+        //console.log(active);
+        function signup(){
+            active.style.left = "114px";
+            loginForm.style.display = "none";
+            signupForm.style.display = "block";
+        }
+        function login(){
+            active.style.left = "0";
+            signupForm.style.display = "none";
+            loginForm.style.display = "block";
+            
+        }
+    </script>
+</body>
+
+</html>
