@@ -1,0 +1,1370 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="icon" href="./testpage_files/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Test Page</title>
+    <style>
+        .form-control-primary {
+            margin: 0;
+            opacity: 0.2;
+            border-radius: 2px;
+        }
+
+        .nav-item {
+            margin: 0;
+            padding: 5px;
+            border: 0;
+            text-align: left;
+            text-indent: left;
+        }
+
+        /* Side bar styles */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 100;
+            padding: 70px 0 0 10px;
+            border-right: 1px solid #d3d3d3;
+        }
+
+        .left-sidebar {
+            position: sticky;
+            top: 0;
+            height: calc(100vh - 70px);
+            overflow: auto;
+        }
+
+        .sidebar-nav li .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .left-sidebar li a:hover {
+            color: rgb(123, 62, 189);
+        }
+
+        main {
+            padding-top: 70px;
+        }
+
+        .question-section {
+            width: 100%;
+            font-family: Open Sans
+        }
+
+        @media (min-width: 768px) {
+            .question-section {
+                margin-top: 0;
+                overflow-y: auto;
+                overflow-x: hidden
+            }
+        }
+
+        .question-section .list-rectanlge-number-text {
+            left: 0;
+            top: 0
+        }
+
+        .question-section .line {
+            height: 1px;
+            border: solid 1px #eeeeee
+        }
+
+        @media (min-width: 768px) {
+            .question-section .line {
+                display: none;
+            }
+        }
+
+        .question-section .question-numer-container {
+            white-space: nowrap;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            overflow: auto hidden;
+            cursor: pointer;
+            scroll-behavior: smooth;
+            overflow-x: auto;
+        }
+
+        @media (min-width: 768px) {
+            .question-section .question-numer-container.advanced {
+                max-height: calc(100vh - 506px)
+            }
+        }
+
+        .question-section .question-numer-container .question-numer-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .question-section .question-numer-container {
+                white-space: unset;
+                display: -webkit-flex;
+                display: flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: -moz-flex;
+                margin-left: 15px;
+                width: 100%;
+                flex-wrap: wrap;
+                overflow-x: unset;
+                overflow: unset;
+                max-height: calc(100vh - 400px);
+                padding: 15px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .question-section .question-numer-container .que {
+                display: unset
+            }
+        }
+
+        .question-section .question-numer-container .answered-adv,
+        .question-section .question-numer-container .not-answered-adv,
+        .question-section .question-numer-container .attempted-review,
+        .question-section .question-numer-container .answered-main,
+        .question-section .question-numer-container .not-answered-main {
+            background-repeat: no-repeat;
+            height: 35px;
+            width: 35px;
+            padding: 8px 29px 1px 11px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            background-size: cover;
+            margin-right: 10px
+        }
+
+        @media (min-width: 768px) {
+
+            .question-section .question-numer-container .answered-adv,
+            .question-section .question-numer-container .not-answered-adv,
+            .question-section .question-numer-container .attempted-review,
+            .question-section .question-numer-container .answered-main,
+            .question-section .question-numer-container .not-answered-main {
+                margin-bottom: 15px
+            }
+        }
+
+        .question-section .question-numer-container .answered-adv {
+            padding: 8px 31px 1px 9px;
+            background-size: contain;
+        }
+
+        @media (min-width: 768px) {
+            .question-section .question-numer-container .attempted-review {
+                padding: 8px 27px 1px 8px;
+                width: 40px;
+                height: 35px
+            }
+        }
+
+        .question-section .question-numer-container .answeredPad {
+            padding: 8px 33px 1px 7px
+        }
+
+        .question-section .question-numer-container .attemptedPad {
+            padding: 8px 35px 1px 5px
+        }
+
+        .question-section .question-numer-container .question-number {
+            min-width: 40px;
+            height: 40px;
+            text-align: center;
+            margin-right: 12px
+        }
+
+        @media (min-width: 768px) {
+            .question-section .question-numer-container .question-number {
+                margin-bottom: 15px
+            }
+        }
+
+        .question-section .question-numer-container .circular-shape {
+            background-color: #7c599f;
+            border-radius: 60%;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            padding-top: 7px;
+            min-width: 37px
+        }
+
+        .question-section .question-numer-container .current-question {
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: bold;
+            border: solid 1px #ff6323;
+            color: #ff6323
+        }
+
+        .question-section .question-numer-container .not-visited {
+            font-size: 14px;
+            font-weight: 800 !important;
+            color: #333333;
+        }
+
+        @media (max-width: 768px) {
+            .question-section .question-numer-container .not-visited {
+                border: solid 1px #eeeeee
+            }
+        }
+
+        .question-section .question-numer-container .click-button {
+            color: #ff6323;
+            border: solid 1px #ff6323;
+            background-color: white;
+            font-weight: bold
+        }
+
+        .question-section .instruction-symbol-container-div {
+            width: 57px;
+            height: 55px;
+            position: relative;
+            top: -54px;
+            float: right;
+            border: solid 1px #e4e7ee;
+            background-color: #ffffff;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .question-section .instruction-symbol-container-div .instruction-symbol-div {
+            color: #3c528b;
+            font-size: 20px
+        }
+
+        @media (min-width: 768px) {
+            .question-section .instruction-symbol-container-div {
+                display: none
+            }
+        }
+
+        .question-section .category-title-advanced {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.13;
+            letter-spacing: 0.57px;
+            color: #3c528b;
+            display: none;
+            padding-left: 12px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            text-transform: uppercase
+        }
+
+        @media (min-width: 768px) {
+            .question-section .category-title-advanced {
+                display: block
+            }
+        }
+
+        .question-section::-webkit-scrollbar {
+            width: 6px
+        }
+
+        .question-section::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 1px grey;
+            border-radius: 10px
+        }
+
+        .question-section::-webkit-scrollbar-thumb {
+            background: #aaaaaa;
+            border-radius: 10px
+        }
+
+        .question-section::-webkit-scrollbar-thumb:hover {
+            background: #b30000
+        }
+
+        .questions-summary-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 20px 0 rgba(102, 102, 102, 0.25);
+            width: 91%;
+            height: auto;
+            position: absolute;
+            margin: 0 auto;
+            left: 0 auto;
+            left: 0;
+            right: 0;
+            padding: 15px 15px 15px 15px;
+            cursor: pointer;
+            z-index: 1;
+            margin-top: 54px;
+        }
+
+        @media (min-width: 768px) {
+            .questions-summary-container {
+                width: 100%;
+                position: unset;
+                margin: unset;
+                box-shadow: unset
+            }
+        }
+
+        .questions-summary-container .marked-review-summary-text {
+            color: #333333;
+            font-size: 12px;
+            font-weight: 600;
+            padding-left: 9px
+        }
+
+        @media (min-width: 768px) {
+            .questions-summary-container .marked-review-summary-text {
+                font-size: 14px;
+                padding-left: 4px
+            }
+        }
+
+        .questions-summary-container .questions-summary {
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            flex-wrap: wrap
+        }
+
+        @media (min-width: 768px) {
+            .questions-summary-container .questions-summary {
+                flex-direction: column
+            }
+        }
+
+        .questions-summary-container .questions-summary .question-summary-div {
+            width: 50%;
+            margin-bottom: 15px;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            align-items: center
+        }
+
+        @media (min-width: 768px) {
+            .questions-summary-container .questions-summary .question-summary-div {
+                width: 100%
+            }
+        }
+
+        .questions-summary-container .questions-summary .question-summary-div .summary-category-text {
+            font-size: 1.25em !important;
+            font-weight: 600;
+            color: #ffffff;
+            padding-left: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .questions-summary-container .questions-summary .question-summary-div .summary-category-text {
+                font-size: 14px
+            }
+        }
+
+        .questions-summary-container .questions-summary .question-summary-div .question-summary-div-flex {
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            align-items: center
+        }
+
+        .questions-summary-container .questions-summary .question-summary-div .question-summary-div-flex .answered-category-text {
+            right: 9px
+        }
+
+        .questions-summary-container .questions-summary .question-summary-div .question-summary-div-flex .not-visited-summary-bar-number {
+            height: 35px;
+            min-width: 35px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #eeeeee
+        }
+
+        .questions-summary-container .questions-summary .question-summary-div .question-summary-div-flex .not-visited-summary-bar-number.not-visited-summary-bar {
+            border: solid 1px #eeeeee;
+            border-radius: 3px
+        }
+
+        .questions-summary-container .questions-summary .question-summary-div .question-summary-div-flex .not-visited-summary-bar-number.review-summary-bar {
+            border-radius: 50%;
+            background-color: #7c599f;
+            color: #ffffff
+        }
+
+        .questions-summary-container .marked-review-summary {
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            align-items: center
+        }
+
+        @media (min-width: 768px) {
+            .questions-summary-container .marked-review-summary {
+                padding-left: unset
+            }
+        }
+
+        .questions-summary-container .answered-adv-suggestion,
+        .questions-summary-container .not-answered-adv-suggestion,
+        .questions-summary-container .attempted-review,
+        .questions-summary-container .answered-main-suggestion,
+        .questions-summary-container .not-answered-main-suggestion {
+            background-repeat: no-repeat;
+            height: 30px;
+            width: 35px;
+            padding: 6px 9px 5px 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px
+        }
+
+        .questions-summary-container .not-answered-adv-suggestion {
+            background-image:
+                url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzNXB4IiBoZWlnaHQ9IjMwcHgiIHZpZXdCb3g9IjAgMCAzNSAzMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzUgMzAiIHhtbDpzcGFjZT0icHJlc2VydmUiPiAgPGltYWdlIGlkPSJpbWFnZTAiIHdpZHRoPSIzNSIgaGVpZ2h0PSIzMCIgeD0iMCIgeT0iMCIKICAgIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQ01BQUFBZUNBTUFBQUNSNDFjWUFBQUFCR2RCVFVFQUFMR1BDL3hoQlFBQUFDQmpTRkpOCkFBQjZKZ0FBZ0lRQUFQb0FBQUNBNkFBQWRUQUFBT3BnQUFBNm1BQUFGM0NjdWxFOEFBQUFoRkJNVkVYckdocnJIeC81dDdmc0lpTDUKdmIzLy8vLzZ3TURzSmliNng4ZjZ3c0xzSXlQc0t5djd6OC82eGNYc0pTWHRMUzM3MDlQN3pjM3NLQ2p0TXpQODI5dnNLU251T1RuOAo0dUw3MTlmdExpN3VRVUg5NmVuODJOanRNRER2UkVUOTYrdjgzOS90TlRYdlRFeis4Zkg4NE9EdU56ZndWbGIrOWZYOTV1YnVQVDN4Clcxdis5dlkrM0I4VEFBQUFBV0pMUjBRRitHL3B4d0FBQUFsd1NGbHpBQUFBWUFBQUFHQUE4R3RDendBQUFBZDBTVTFGQitNSkdoWVIKSVdtcitvb0FBQUIyU1VSQlZEakw3Y3BIRG9KUUFBRFJMemlJVWxRc0ZDbFNCTXY5NzJlTU1YUnd5WUxaemhOaWJtNENMZjRRMGhpUwpsd0pGSGlRckZRSHJ6UURSZEQ0R3crd2wyeDFmdzk3cUlZY2pQNE4rNmlSbm05TGd1QjNFdTFBMStFR0xoQkYxd3pWdWtDU2xhY2h1Ck5aSVh0QTMzUjRVOFgrVjRBd2NNQmVVZ0JNM1JBQUFBSlhSRldIUmtZWFJsT21OeVpXRjBaUUF5TURFNUxUQTVMVEkzVkRBMU9qRTMKT2pNekxUQTNPakF3NlFCWkVBQUFBQ1YwUlZoMFpHRjBaVHB0YjJScFpua0FNakF4T1Mwd09TMHlOMVF3TlRveE56b3pNeTB3TnpvdwpNSmhkNGF3QUFBQUFTVVZPUks1Q1lJST0iIC8+Cjwvc3ZnPgo=)
+        }
+
+        .questions-summary-container .answered-main-suggestion {
+            background-image:
+                url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzZweCIgaGVpZ2h0PSIyOXB4IiB2aWV3Qm94PSIwIDAgMzYgMjkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU4ICg4NDY2MykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+UGF0aCA0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkpFRS1NYWluX1dlYiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkpFRV9NYWluLVdlYi1fVGVzdC0tMDEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTIyLjAwMDAwMCwgLTE3Mi4wMDAwMDApIiBmaWxsPSIjNTlBQTAwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhdGgtNCIgcG9pbnRzPSIxMTIyIDE3MiAxMTIyIDIwMSAxMTU3LjAzODI4IDE5NC4wMzEzMjkgMTE1Ny4wMzk2NiAxNzcuMTA3OTE0Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
+            padding: 4px 9px 4px 9px;
+            height: 29px
+        }
+
+        .questions-summary-container .not-answered-main-suggestion {
+            background-image:
+                url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzYiIGhlaWdodD0iMjkiIHZlcnNpb249IjEuMSIgc3R5bGU9IiI+PHJlY3QgaWQ9ImJhY2tncm91bmRyZWN0IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4PSIwIiB5PSIwIiBmaWxsPSJub25lIiBzdHJva2U9Im5vbmUiLz4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNTggKDg0NjYzKSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5QYXRoIDQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICAKPGcgY2xhc3M9ImN1cnJlbnRMYXllciIgc3R5bGU9IiI+PHRpdGxlPkxheWVyIDE8L3RpdGxlPjxnIGlkPSJKRUUtTWFpbl9XZWIiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSIjZWIxYTFhIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsYXNzPSJzZWxlY3RlZCIgZmlsbC1vcGFjaXR5PSIxIj4KICAgICAgICA8ZyBpZD0iSkVFX01haW4tV2ViLV9UZXN0LS0wMSIgZmlsbD0iI2ViMWExYSIgZmlsbC1vcGFjaXR5PSIxIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhdGgtNCIgcG9pbnRzPSIwLDAgMCwyOSAzNS4wMzgzMzAwNzgxMjUsMjIuMDMxMzI2MjkzOTQ1MzEyIDM1LjAzOTY3Mjg1MTU2MjUsNS4xMDc5MTAxNTYyNSAiIGZpbGw9IiNlYjFhMWEiIGZpbGwtb3BhY2l0eT0iMSIvPgogICAgICAgIDwvZz4KICAgIDwvZz48L2c+PC9zdmc+);
+            padding: 4px 9px 4px 9px;
+            height: 29px
+        }
+
+        .questions-summary-container .attempted-review {
+            background-image:
+                url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzhweCIgaGVpZ2h0PSIzNXB4IiB2aWV3Qm94PSIwIDAgMzggMzUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU4ICg4NDY2MykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+R3JvdXAgNDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxnIGlkPSJKRUUtTWFpbl9XZWIiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJKRUVfTWFpbi1XZWItX1Rlc3QtLTAxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTEyMy4wMDAwMDAsIC0zNzYuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTIzLjAwMDAwMCwgMzc2LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTMiPgogICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGZpbGw9IiM3QzU5OUYiIGN4PSIxNy41IiBjeT0iMTcuNSIgcj0iMTcuNSI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbCIgZmlsbD0iIzU5QUEwMCIgY3g9IjMyIiBjeT0iMjYiIHI9IjYiPjwvY2lyY2xlPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPGcgaWQ9InRpY2siIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI5LjAwMDAwMCwgMjQuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNi44OTc0ODY3LDAuMDk5NzEzMTM0NCBDNi43NjA4MDkxMywtMC4wMzMyMzc3MTE1IDYuNTM5MjE1NjUsLTAuMDMzMjM3NzExNSA2LjQwMjUxMDc0LDAuMDk5NzEzMTM0NCBMMi4yMDkyOTcxMSw0LjE3ODIyNDM0IEwwLjU5NzQ5NDM4OCwyLjYxMDUyNjY5IEMwLjQ2MDgxNjgyLDIuNDc3NTc1ODUgMC4yMzkyMjMzNDEsMi40Nzc1ODkxNCAwLjEwMjUxODQzLDIuNjEwNTI2NjkgQy0wLjAzNDE3MjgwOTgsMi43NDM0NjQyNCAtMC4wMzQxNzI4MDk4LDIuOTU4OTk0MDggMC4xMDI1MTg0MywzLjA5MTk0NDkyIEwxLjk2MTgwOTEzLDQuOTAwMzMxNzQgQzIuMDk4NDQ1NjgsNS4wMzMyNjkyOSAyLjMyMDIwMzIyLDUuMDMzMTc2MjEgMi40NTY3ODUwOSw0LjkwMDMzMTc0IEw2Ljg5NzQ4NjcsMC41ODExNDQ2NjMgQzcuMDM0MTc3OTQsMC40NDgyMDcxMTUgNy4wMzQxNjQyNiwwLjIzMjY2Mzk4IDYuODk3NDg2NywwLjA5OTcxMzEzNDQgWiIgaWQ9IlBhdGgiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
+            padding: 8px 28px 1px 10px;
+            background-size: contain;
+            height: 35px
+        }
+
+        @media (min-width: 768px) {
+            .questions-summary-container .attempted-review {
+                padding: 8px 27px 1px 10px;
+                width: 40px;
+                height: 35px
+            }
+        }
+
+        .navigator-section-top {
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -ms-justify-content: space-between;
+            -o-justify-content: space-between;
+            margin-top: 20px;
+            width: 100%;
+            padding: 0 16px;
+            position: absolute
+        }
+
+        @media (min-width: 768px) {
+            .question-component-wrapper .navigator-section-top {
+                display: none
+            }
+        }
+
+        .question-component-wrapper .navigator-section-top .prev {
+            cursor: pointer;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            width: 79px;
+            height: 30px;
+            border-radius: 15px;
+            border: solid 1px #efefef;
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333
+        }
+
+        .question-component-wrapper .navigator-section-top .prev .vicon-arrow-left {
+            padding-right: 8px;
+            font-weight: bold
+        }
+
+        .question-component-wrapper .navigator-section-top .clear-section-button {
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            height: 30px;
+            border-radius: 15px;
+            width: 108px;
+            font-family: Open Sans;
+            font-size: 12px;
+            font-weight: 600;
+            color: #263868;
+            border: 1px solid
+        }
+
+        .question-component-wrapper .navigator-section-top .clear-section-button.disabled {
+            opacity: 0.3;
+            pointer-events: none
+        }
+
+        .question-component-wrapper .navigator-section-top .next {
+            cursor: pointer;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            width: 79px;
+            height: 30px;
+            border-radius: 15px;
+            border: solid 1px #efefef;
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333
+        }
+
+        .question-component-wrapper .navigator-section-top .next .vicon-arrow-right {
+            padding-left: 8px;
+            font-weight: bold
+        }
+
+        .question-component-wrapper .navigator-section {
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -ms-justify-content: space-between;
+            -o-justify-content: space-between;
+            padding-left: 40px;
+            padding-bottom: 30px;
+            padding-right: 40px
+        }
+
+        @media(max-width: 767px) {
+            .question-component-wrapper .navigator-section {
+                display: none
+            }
+        }
+
+        .question-component-wrapper .navigator-section .navigation-arrows {
+            max-width: 50%;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: flex-start;
+            -webkit-justify-content: flex-start;
+            -moz-justify-content: flex-start;
+            -ms-justify-content: flex-start;
+            -o-justify-content: flex-start;
+            min-width: 13%
+        }
+
+        .question-component-wrapper .navigator-section .navigation-arrows .next {
+            margin-left: 20px;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            width: 79px;
+            height: 30px;
+            border-radius: 15px;
+            border: solid 1px #efefef;
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            cursor: pointer
+        }
+
+        .question-component-wrapper .navigator-section .navigation-arrows .next .vicon-arrow-right {
+            padding-left: 8px;
+            font-weight: bold
+        }
+
+        .question-component-wrapper .navigator-section .navigation-arrows .prev {
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            width: 79px;
+            height: 30px;
+            border-radius: 15px;
+            border: solid 1px #efefef;
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            cursor: pointer
+        }
+
+        .question-component-wrapper .navigator-section .navigation-arrows .prev .vicon-arrow-left {
+            padding-right: 8px;
+            font-weight: bold
+        }
+
+        .question-component-wrapper .navigator-section .end-test {
+            width: 10.3%;
+            display: -webkit-flex;
+            display: flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -moz-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #ff6323;
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff
+        }
+
+        .endTest {
+            padding: 6px 10px 5px 10px;
+            border-radius: 15px;
+            background-color: #ff6323;
+            text-transform: uppercase;
+            font-size: 14px;
+            width: 95px;
+            font-family: Open Sans;
+            font-weight: bold;
+            color: #ffffff
+        }
+
+        .endTest .endTestMains {
+            position: relative;
+            right: 263px;
+            transition: right 0.4s linear
+        }
+
+        @media (max-width: 768px) {
+            .endTest {
+                padding: unset;
+                font-size: 12px;
+                width: 80px;
+                height: 25px;
+                padding-top: 4px
+            }
+        }
+
+        .flex-box {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 10px;
+        }
+
+        .flex-box-2 {
+            display: flex;
+            justify-content: flex-end;
+            padding-left: 10px 10px;
+        }
+
+        #guide {
+            color: #ffffff;
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            top: 10px;
+            left: 50px;
+            padding-right: 10px;
+            border-radius: 5px;
+        }
+
+        .x1 {
+            width: 100%;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .column11 {
+            float: left;
+            width: 50%;
+            background-color: #263868;
+        }
+
+        .column12 {
+            float: right;
+            height: 100vh;
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .question-number button{
+            background-color: #fff;
+            border: 2px solid #000;
+            width: 40px;
+            height: 40px;
+        }
+        .btn-primary{
+            width: 250px;
+        }
+        #prompt{
+            min-height: 10vh;
+            max-height: 20vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+        .btn{
+            min-width: 80px;
+        }
+    </style>
+
+    <!-- To add ajax, url to 'home' page -->
+    <script>
+        var URL = "{% url 'test' %}";
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Previous slim version of Jquery was being used, since it was missing AJAX	 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">e-Pathshala</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+
+                <a class="nav-link" href="/test/logout/">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="row1">
+
+        <div class="column11">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <!-- Sidebar -->
+                    <div class="col-md-3 d-none d-md-block sidebar" style="background-color: #821c66; opacity: .8;">
+                        <div class="left-sidebar" style="padding: 5% !important;">
+                            <form class="form-inline justify-content-center" style="color: #ffffff;">
+                                <h2 class="mr-sm-2" id="time2">1</h2>
+                                <h2>: </h2>
+                                <h2 class="mr-sm-2" id="time1">00</h2>
+                                <h2>:</h2>
+                                <h2 class="mr-sm-2" id="time">00</h2>
+                            </form>
+                            <h3 class="text-center" id="guide">Instructions</h3>
+                            <p style="color: #ffffff;">1. The quiz consists of 25 MCQ'S and each question has one correct answer.</p>
+                            <p style="color: #ffffff;">2. A single attempt is allowed for the given quiz. </p>
+                            <p style="color: #ffffff;">3. Use of electronic gadgets like mobile phone or calculator is strictly prohibited.</p>
+                            <p style="color: #ffffff;">4. The score of your attempt will be recorded. </p>
+                            <ul class="nav flex-column sidebar-nav">
+                                <div class="question-suggestion-div">
+                                    <div class="QuestionNumbers-QuestionsSummary">
+                                        <div class="Suggestion-in-web">
+
+                                            <div class="questions-summary-container">
+
+                                                <div class="questions-summary">
+
+                                                    <div class="question-summary-div">
+                                                        <div class="answered-main-suggestion" id="ans">00</div>
+                                                        <div class="summary-category-text my-auto">Answered</div>
+                                                    </div>
+
+                                                    <div class="question-summary-div">
+                                                        <div class="not-answered-main-suggestion" id="notans">25</div>
+                                                        <div class="summary-category-text my-auto">Not Answered</div>
+                                                    </div>
+
+                                                    <div class="question-summary-div">
+                                                        <div class="question-summary-div-flex">
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="question-summary-div">
+                                                        <div class="question-summary-div-flex">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="marked-review-summary">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="question-section ">
+                                                <div class="question-numer-container null">
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="1" onclick=goto(1,"#1")>Q1</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="2" onclick=goto(2,"#2")>Q2</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="3" onclick=goto(3,"#3")>Q3</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="4" onclick=goto(4,"#4")>Q4</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="5" onclick=goto(5,"#5")>Q5</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="6" onclick=goto(6,"#6")>Q6</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="7" onclick=goto(7,"#7")>Q7</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="8" onclick=goto(8,"#8")>Q8</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="9" onclick=goto(9,"#9")>Q9</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="10" onclick=goto(10,"#10")>Q10</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="11" onclick=goto(11,"#11")>Q11</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="12" onclick=goto(12,"#12")>Q12</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="13" onclick=goto(13,"#13")>Q13</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="14" onclick=goto(14,"#14")>Q14</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="15" onclick=goto(15,"#15")>Q15</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="16" onclick=goto(16,"#16")>Q16</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="17" onclick=goto(17,"#17")>Q17</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="18" onclick=goto(18,"#18")>Q18</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="19" onclick=goto(19,"#19")>Q19</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="20" onclick=goto(20,"#20")>Q20</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="21" onclick=goto(21,"#21")>Q21</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="22" onclick=goto(22,"#22")>Q22</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="23" onclick=goto(23,"#23")>Q23</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="24" onclick=goto(24,"#24")>Q24</button></div>
+                                                    <div class="question-number not-visited null"><button class="que"
+                                                            id="25" onclick=goto(25,"#25")>Q25</button></div>
+                                                    
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column12" style="background-color: #f7f7f7;">
+        <div class="x1 mt-5">
+            <div class="container p-5">
+                <div class="page-header mx-auto text-center mt-5">
+                    <h1 id="promptspace" class="mt-5 mx-auto text-center" style="font-weight: 800; font-size: 4em;width: fit-content;
+                    background: linear-gradient(90deg, rgb(7, 110, 170) 18%, rgba(245,62,106,1) 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    line-height: 1.5em;">
+                        e-Pathshala Olympiad
+                    </h1>
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <button id="start" onclick="startQuiz()" type="button" class="btn btn-primary" style="background-color:#821C66">
+                            Start Exam
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        //Selecting class questions
+        // var questions = {"8":questions_8,"9" :questions_9,"10" :questions_10,"11" :questions_11,"12" :questions_12};
+        // var questions = {questions_8,questions_9,questions_10,questions_11,questions_12};
+        // var std = String({{class}});
+        // console.log(std);
+        // initialize points
+        var questions = [
+            {% for item in class %}
+            {
+                "title":"{{item.title}}",
+                "choices":[
+                    {% for choice in item.choices %}
+                    "{{choice}}",
+                    {% endfor %}
+                    ],
+                "answer":"{{item.answer}}",
+                "r":""
+            },
+            {% endfor %}
+
+        ];
+        var qindex = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15",
+            "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25"
+        ];
+
+        var score = 0;
+        var round = 0;
+
+
+
+        var ansrecord = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+            "", "", "", "", "", "", "", "", "", "", ""
+        ]; //stores the responses
+        var responsetime = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0
+        ]; //stores the time in seconds spend on each
+
+        var answered = document.querySelector("#ans");
+        var notanswered = document.querySelector("#notans");
+        // Start timer and populate page with prompt and answers
+        function initialize() {
+            // initialize button elements
+            var parent = document.getElementById("start").parentNode;
+            var vanish = document.getElementById("start");
+
+            //start timer:
+
+
+            // initialize prompt element
+            var promptparent = document.getElementById("promptspace").parentNode;
+            var node = document.createElement("H2");
+            var textnode = document.createTextNode(questions[round].title);
+            node.setAttribute("id", "prompt");
+            node.appendChild(textnode);
+            promptparent.appendChild(node);
+
+            // remove the start button
+            parent.removeChild(vanish);
+
+            // populate page with multiple choice elements
+            for (var i = 0; i < 4; i++) {
+                if(i===2){
+                    const breaks =  document.createElement("BR");
+                    parent.appendChild(breaks);
+                }
+                var nbut = document.createElement("BUTTON");
+                var quest = document.createTextNode(questions[round].choices[i]);
+                nbut.appendChild(quest);
+                parent.appendChild(nbut);
+                nbut.classList.add("choices");
+                nbut.classList.add("btn");
+                nbut.classList.add("btn-primary");
+                nbut.classList.add("m-3");
+                nbut.setAttribute("id", qindex[i]);
+                nbut.style.backgroundColor='#821c66';
+                nbut.setAttribute("onclick", "nextRound(this)");
+            }
+            parent.appendChild(document.createElement("BR"));
+
+            var next = document.createElement("BUTTON");
+            var tet = document.createTextNode("Next");
+
+            var back = document.createElement("BUTTON");
+            var xt = document.createTextNode("Back");
+
+            var skip = document.createElement("BUTTON");
+            var txt = document.createTextNode("Skip");
+
+            var end = document.createElement("BUTTON");
+            var text = document.createTextNode("End Quiz");
+            
+            
+            next.appendChild(tet);
+            parent.appendChild(next);
+            next.classList.add("btn");
+            next.classList.add("btn-sm");
+            next.classList.add("btn-outline-dark");
+            next.classList.add("mr-2");
+
+            next.setAttribute("id", "skipper");
+            next.setAttribute("onclick", "store()");
+
+            skip.appendChild(txt);
+            parent.appendChild(skip);
+
+            skip.setAttribute("id", "skipper");
+            skip.setAttribute("onclick", "skipped()");
+            skip.classList.add("btn");
+            skip.classList.add("btn-sm");
+            skip.classList.add("btn-outline-dark");
+            skip.classList.add("mr-2");
+
+
+            back.appendChild(xt);
+            parent.appendChild(back);
+            back.classList.add("btn");
+            back.classList.add("btn-sm");
+            back.classList.add("mr-2");
+            back.classList.add("btn-outline-dark");
+
+            back.setAttribute("id", "backer");
+            back.setAttribute("onclick", "backward()");
+
+            end.appendChild(text);
+            parent.appendChild(end);
+            end.classList.add("btn");
+            end.classList.add("btn-sm");
+            end.classList.add("mr-2");
+            end.classList.add("btn-outline-danger");
+
+
+            end.setAttribute("id", "close");
+            end.setAttribute("onclick", "submit(this)");
+
+            return round;
+        }
+
+        
+        function submit(elem) {
+            stopTimer();
+            //Removes buttons and prompt once all questions are answered, replaces them with score.
+            document.getElementById("prompt").textContent = "Your final score is: " + score;
+            for (i = 0; i < 4; i++) {
+                document.getElementById(qindex[i]).remove();
+            }
+            document.getElementById("close").remove();
+            document.getElementById("skipper").remove();
+            document.getElementById("backer").remove();
+            return;
+        }
+        Element.prototype.remove = function () {
+            this.parentElement.removeChild(this);
+        }
+        NodeList.prototype.remove = HTMLCollection.prototype.remove = function () {
+            for (var i = this.length - 1; i >= 0; i--) {
+                if (this[i] && this[i].parentElement) {
+                    this[i].parentElement.removeChild(this[i]);
+                }
+            }
+        }
+
+        function backward() {
+            round--;
+            for (i = 0; i < 4; i++) {
+                document.getElementById("prompt").textContent = questions[round].title;
+                document.getElementById(qindex[i]).textContent = questions[round].choices[i];
+            }
+        }
+
+        function skipped() {
+            round++;
+            for (i = 0; i < 4; i++) {
+                document.getElementById("prompt").textContent = questions[round].title;
+                document.getElementById(qindex[i]).textContent = questions[round].choices[i];
+            }
+        }
+
+        function goto(elem, id) {
+            round = elem - 1;
+            for (i = 0; i < 4; i++) {
+                document.getElementById("prompt").textContent = questions[round].title;
+                document.getElementById(qindex[i]).textContent = questions[round].choices[i];
+            }
+        }
+
+
+        var ansd = 0;
+        var notansd = 25;
+
+        // Moves questions on to next set and keeps score
+        function nextRound(elem) {
+            console.log(responsetime);
+
+
+            updateDBusingAjax(elem); // TO send data back to django Database
+
+            round++;
+            if (ansrecord[round - 1] == "") {
+                if (elem.textContent == questions[round - 1].answer) {
+                    score++;
+                    console.log(score)
+                }
+
+
+                ansd++;
+                notansd--;
+
+            } else if (ansrecord[round - 1] == questions[round - 1].answer) {
+                if (elem.textContent != questions[round - 1].answer) {
+                    score--;
+                    console.log(score)
+                }
+            } else if (elem.textContent != questions[round - 1].answer) {
+                score++;
+                console.log(score)
+            }
+            ansrecord[round - 1] = elem.textContent;
+            answered.textContent = ansd;
+            notanswered.textContent = notansd;
+            
+            if (round == 25) {
+                stopTimer();
+                //Removes buttons and prompt once all questions are answered, replaces them with score.
+                document.getElementById("prompt").textContent = "Your final score is: " + score;
+                for (i = 0; i < 4; i++) {
+                    document.getElementById(qindex[i]).remove();
+                }
+                document.getElementById("close").remove();
+                document.getElementById("skipper").remove();
+                document.getElementById("backer").remove();
+
+                return;
+            }/*
+            for (i = 0; i < 4; i++) {
+                document.getElementById("prompt").textContent = questions[round].title;
+                document.getElementById(qindex[i]).textContent = questions[round].choices[i];
+            }*/
+
+        }
+
+        function store(){
+            for (i = 0; i < 4; i++) {
+                document.getElementById("prompt").textContent = questions[round].title;
+                document.getElementById(qindex[i]).textContent = questions[round].choices[i];
+            }
+        }
+        var timeLeft = document.querySelector("#time");
+        var min = document.querySelector("#time1");
+        var hr = document.querySelector("#time2");
+        var totalSeconds = 60;
+        var totmin = 30;
+        var tothour = 0;
+        var secondsElapsed = 0;
+        var hrElapsed = 0;
+        var minElapsed = 0;
+        var interval;
+
+        var timerStarted = false;
+
+
+        function showTime() {
+            var secondsLeft = totalSeconds - secondsElapsed;
+            timeLeft.textContent = secondsLeft;
+            var hrleft = tothour - hrElapsed;
+            hr.textContent = hrleft;
+            var minleft = totmin - minElapsed;
+            min.textContent = minleft;
+
+
+            if (hrleft == 0 && minleft == 0 && secondsLeft == 0) {
+                stopTimer();
+                timeLeft.textContent = secondsLeft;
+                hr.textContent = hrleft;
+                min.textContent = minleft;
+
+                document.getElementById("prompt").textContent = " Your final score : " + score;
+                for (i = 0; i < 4; i++) {
+                    document.getElementById(qindex[i]).remove();
+                }
+                return;
+            }
+
+            if (secondsLeft == 0) {
+                minElapsed++;
+                totalSeconds = 60;
+                secondsElapsed = 0;
+                timeLeft.textContent = secondsLeft;
+
+            }
+
+
+        }
+
+
+        function timer() {
+            interval = setInterval(function () {
+                secondsElapsed++;
+                if (ansrecord[round] == "") {
+                    responsetime[round]++; // increments the time spent in question[round] in seconds
+                }
+                showTime();
+            }, 1000);
+        }
+
+        function start() {
+            timerStarted = true;
+            timer();
+        }
+
+        // Ajax function declared
+        function updateDBusingAjax(elem) {
+
+            if (elem.textContent == questions[round].answer) {
+                mark = 1;
+            } else {
+                mark = -1;
+            }
+
+            var data = {
+                'r_id': round,
+                'response': elem.textContent,
+                'timestamp': responsetime[round],
+                'mark_scored': mark,
+                'answered': ansd + 1,
+
+            };
+
+            $.post(URL, data, function (response) { // to post data to django server
+            });
+        }
+
+        // <!-- ################################################################################################### -->
+
+        function startQuiz() {
+            if (timerStarted === false) {
+                start();
+                initialize();
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(interval);
+        }
+    </script>
+    <style>
+        #bt {
+            margin-right: 20px;
+            margin-left: 10px;
+        }
+    </style>
+
+</body>
+</html>
