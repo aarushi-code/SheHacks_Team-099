@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Toy Chat Application">
+    <title>{% block title %}Welcome{% endblock %} | Forum</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+    <script src="{% static 'core/js/jquery.min.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+    <!--<script src="{% static 'core/js/bootstrap-datetimepicker.min.js' %}"></script>-->
+    <!--<script src="{% static 'core/css/bootstrap-datetimepicker.min.css' %}"></script>-->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css' %}"/>
+    <style>
+        body{
+            background-color:#821C66;
+        }
+    </style>
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+{% include 'chat/header.html' %}
+
+{% block main %}
+{% endblock %}
+
+</body>
+</html>
